@@ -1,0 +1,353 @@
+/* ==========================================================================
+   KAIZENLAB — DESIGN SYSTEM
+   Consultoría en Sistemas de Gestión de Calidad y Mejora Continua
+   Prefijo de clases: .kz-
+   Colores extraídos directamente del isotipo (KAIZEN azul marino / LAB rojo)
+   ========================================================================== */
+
+:root {
+  /* ---- Marca: colores primarios (extraídos del logo) ---- */
+  --kz-navy:        #2E3192;   /* KAIZEN — color primario, texto de marca, headers */
+  --kz-navy-dark:   #262262;   /* variante oscura del isotipo, hover/active de navy */
+  --kz-red:         #ED1C24;   /* LAB + engrane — color secundario, acentos y CTAs */
+  --kz-red-dark:    #C4141B;   /* hover/active de rojo */
+  --kz-black:       #000000;   /* detalle del isotipo (microscopio), texto de alto contraste */
+
+  /* ---- Neutros ---- */
+  --kz-white:       #FFFFFF;
+  --kz-gray-50:     #F7F8FA;
+  --kz-gray-100:    #EEF0F4;
+  --kz-gray-200:    #DDE1E8;
+  --kz-gray-300:    #C2C8D3;
+  --kz-gray-400:    #9AA2B1;
+  --kz-gray-500:    #6B7280;
+  --kz-gray-600:    #4B5265;
+  --kz-gray-700:    #333A4D;
+  --kz-gray-800:    #1F2433;
+  --kz-gray-900:    #14171F;
+
+  /* ---- Semánticos (derivados de la paleta, coherentes con contexto ISO/clínico) ---- */
+  --kz-success:     #1F9D6B;
+  --kz-success-bg:  #E7F7EF;
+  --kz-warning:     #E8A317;
+  --kz-warning-bg:  #FDF3DD;
+  --kz-danger:      var(--kz-red);
+  --kz-danger-bg:   #FCE7E8;
+  --kz-info:        var(--kz-navy);
+  --kz-info-bg:     #E9EAF7;
+
+  /* ---- Superficies ---- */
+  --kz-bg:          var(--kz-gray-50);
+  --kz-surface:     var(--kz-white);
+  --kz-border:      var(--kz-gray-200);
+  --kz-text:        var(--kz-gray-800);
+  --kz-text-muted:  var(--kz-gray-500);
+
+  /* ---- Tipografía ---- */
+  /* Wordmark del logo = geométrica, extra bold, mayúsculas cerradas -> Poppins para
+     headings/display; Inter para texto largo por su legibilidad clínica/técnica. */
+  --kz-font-display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --kz-font-body:    'Inter', 'Segoe UI', system-ui, sans-serif;
+  --kz-font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  --kz-fs-xs:   0.75rem;
+  --kz-fs-sm:   0.875rem;
+  --kz-fs-base: 1rem;
+  --kz-fs-md:   1.125rem;
+  --kz-fs-lg:   1.375rem;
+  --kz-fs-xl:   1.75rem;
+  --kz-fs-2xl:  2.25rem;
+  --kz-fs-3xl:  3rem;
+
+  --kz-fw-regular:  400;
+  --kz-fw-medium:   500;
+  --kz-fw-semibold: 600;
+  --kz-fw-bold:     700;
+  --kz-fw-black:    800;
+
+  /* ---- Espaciado (escala base 4px) ---- */
+  --kz-space-1: 0.25rem;
+  --kz-space-2: 0.5rem;
+  --kz-space-3: 0.75rem;
+  --kz-space-4: 1rem;
+  --kz-space-5: 1.5rem;
+  --kz-space-6: 2rem;
+  --kz-space-7: 3rem;
+  --kz-space-8: 4rem;
+
+  /* ---- Radios y sombras ---- */
+  --kz-radius-sm: 6px;
+  --kz-radius-md: 10px;
+  --kz-radius-lg: 16px;
+  --kz-radius-full: 999px;
+
+  --kz-shadow-sm: 0 1px 2px rgba(20, 23, 31, 0.06);
+  --kz-shadow-md: 0 4px 12px rgba(20, 23, 31, 0.08);
+  --kz-shadow-lg: 0 12px 32px rgba(20, 23, 31, 0.12);
+
+  --kz-transition: 160ms ease;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+.kz-root {
+  font-family: var(--kz-font-body);
+  color: var(--kz-text);
+  background: var(--kz-bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.kz-root h1, .kz-root h2, .kz-root h3, .kz-root h4 {
+  font-family: var(--kz-font-display);
+  color: var(--kz-navy);
+  font-weight: var(--kz-fw-bold);
+  line-height: 1.2;
+  margin: 0 0 var(--kz-space-3);
+}
+
+.kz-root h1 { font-size: var(--kz-fs-3xl); font-weight: var(--kz-fw-black); letter-spacing: -0.01em; }
+.kz-root h2 { font-size: var(--kz-fs-2xl); }
+.kz-root h3 { font-size: var(--kz-fs-xl); }
+.kz-root h4 { font-size: var(--kz-fs-md); }
+
+.kz-root p { margin: 0 0 var(--kz-space-3); color: var(--kz-text); }
+.kz-text-muted { color: var(--kz-text-muted); }
+
+/* ==========================================================================
+   HEADER / MARCA
+   ========================================================================== */
+
+.kz-header {
+  display: flex;
+  align-items: center;
+  gap: var(--kz-space-4);
+  padding: var(--kz-space-4) var(--kz-space-6);
+  background: var(--kz-white);
+  border-bottom: 3px solid var(--kz-red);
+}
+
+.kz-logo-word {
+  font-family: var(--kz-font-display);
+  font-weight: var(--kz-fw-black);
+  font-size: var(--kz-fs-lg);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.kz-logo-word .kz-logo-kaizen { color: var(--kz-navy); }
+.kz-logo-word .kz-logo-lab { color: var(--kz-red); }
+
+.kz-tagline {
+  font-size: var(--kz-fs-xs);
+  color: var(--kz-text-muted);
+  border-left: 2px solid var(--kz-gray-300);
+  padding-left: var(--kz-space-3);
+}
+
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+
+.kz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kz-space-2);
+  font-family: var(--kz-font-body);
+  font-weight: var(--kz-fw-semibold);
+  font-size: var(--kz-fs-sm);
+  padding: var(--kz-space-3) var(--kz-space-5);
+  border-radius: var(--kz-radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background var(--kz-transition), border-color var(--kz-transition), transform var(--kz-transition);
+}
+.kz-btn:active { transform: translateY(1px); }
+.kz-btn:focus-visible { outline: 3px solid var(--kz-navy); outline-offset: 2px; }
+
+.kz-btn-primary {
+  background: var(--kz-navy);
+  color: var(--kz-white);
+}
+.kz-btn-primary:hover { background: var(--kz-navy-dark); }
+
+.kz-btn-accent {
+  background: var(--kz-red);
+  color: var(--kz-white);
+}
+.kz-btn-accent:hover { background: var(--kz-red-dark); }
+
+.kz-btn-outline {
+  background: transparent;
+  color: var(--kz-navy);
+  border-color: var(--kz-navy);
+}
+.kz-btn-outline:hover { background: var(--kz-info-bg); }
+
+.kz-btn-ghost {
+  background: transparent;
+  color: var(--kz-text-muted);
+}
+.kz-btn-ghost:hover { background: var(--kz-gray-100); color: var(--kz-text); }
+
+/* ==========================================================================
+   TARJETAS / CARDS
+   ========================================================================== */
+
+.kz-card {
+  background: var(--kz-surface);
+  border: 1px solid var(--kz-border);
+  border-radius: var(--kz-radius-md);
+  padding: var(--kz-space-5);
+  box-shadow: var(--kz-shadow-sm);
+}
+
+.kz-card-accent {
+  border-left: 4px solid var(--kz-red);
+}
+
+.kz-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--kz-space-4);
+}
+
+/* ==========================================================================
+   BADGES / ESTADOS (útil para no conformidades, folios, cumplimiento ISO)
+   ========================================================================== */
+
+.kz-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kz-space-1);
+  font-size: var(--kz-fs-xs);
+  font-weight: var(--kz-fw-semibold);
+  padding: var(--kz-space-1) var(--kz-space-3);
+  border-radius: var(--kz-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.kz-badge-success { background: var(--kz-success-bg); color: var(--kz-success); }
+.kz-badge-warning { background: var(--kz-warning-bg); color: #8A6116; }
+.kz-badge-danger  { background: var(--kz-danger-bg);  color: var(--kz-red-dark); }
+.kz-badge-info    { background: var(--kz-info-bg);    color: var(--kz-navy); }
+.kz-badge-neutral { background: var(--kz-gray-100);   color: var(--kz-gray-600); }
+
+/* ==========================================================================
+   TABLAS (registros, folios, hallazgos)
+   ========================================================================== */
+
+.kz-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--kz-fs-sm);
+  background: var(--kz-surface);
+  border-radius: var(--kz-radius-md);
+  overflow: hidden;
+  box-shadow: var(--kz-shadow-sm);
+}
+.kz-table th {
+  background: var(--kz-navy);
+  color: var(--kz-white);
+  text-align: left;
+  font-weight: var(--kz-fw-semibold);
+  padding: var(--kz-space-3) var(--kz-space-4);
+}
+.kz-table td {
+  padding: var(--kz-space-3) var(--kz-space-4);
+  border-bottom: 1px solid var(--kz-border);
+}
+.kz-table tr:last-child td { border-bottom: none; }
+.kz-table tr:hover td { background: var(--kz-gray-50); }
+
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
+.kz-label {
+  display: block;
+  font-size: var(--kz-fs-sm);
+  font-weight: var(--kz-fw-medium);
+  color: var(--kz-gray-700);
+  margin-bottom: var(--kz-space-1);
+}
+
+.kz-input,
+.kz-select,
+.kz-textarea {
+  width: 100%;
+  font-family: var(--kz-font-body);
+  font-size: var(--kz-fs-base);
+  padding: var(--kz-space-3);
+  border: 1.5px solid var(--kz-border);
+  border-radius: var(--kz-radius-sm);
+  background: var(--kz-white);
+  color: var(--kz-text);
+  transition: border-color var(--kz-transition), box-shadow var(--kz-transition);
+}
+.kz-input:focus,
+.kz-select:focus,
+.kz-textarea:focus {
+  outline: none;
+  border-color: var(--kz-navy);
+  box-shadow: 0 0 0 3px rgba(46, 49, 146, 0.15);
+}
+
+/* ==========================================================================
+   ALERTAS
+   ========================================================================== */
+
+.kz-alert {
+  display: flex;
+  gap: var(--kz-space-3);
+  padding: var(--kz-space-4);
+  border-radius: var(--kz-radius-sm);
+  border-left: 4px solid;
+  font-size: var(--kz-fs-sm);
+}
+.kz-alert-success { background: var(--kz-success-bg); border-color: var(--kz-success); color: #1B7A54; }
+.kz-alert-warning  { background: var(--kz-warning-bg); border-color: var(--kz-warning); color: #8A6116; }
+.kz-alert-danger   { background: var(--kz-danger-bg);  border-color: var(--kz-red);     color: var(--kz-red-dark); }
+.kz-alert-info     { background: var(--kz-info-bg);    border-color: var(--kz-navy);    color: var(--kz-navy); }
+
+/* ==========================================================================
+   NAVEGACIÓN LATERAL (apps tipo dashboard)
+   ========================================================================== */
+
+.kz-sidebar {
+  background: var(--kz-navy);
+  color: var(--kz-white);
+  padding: var(--kz-space-5) var(--kz-space-3);
+}
+.kz-sidebar a {
+  display: block;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: var(--kz-fs-sm);
+  padding: var(--kz-space-3) var(--kz-space-4);
+  border-radius: var(--kz-radius-sm);
+  margin-bottom: var(--kz-space-1);
+  transition: background var(--kz-transition), color var(--kz-transition);
+}
+.kz-sidebar a:hover { background: rgba(255,255,255,0.08); color: var(--kz-white); }
+.kz-sidebar a.kz-active {
+  background: var(--kz-red);
+  color: var(--kz-white);
+  font-weight: var(--kz-fw-semibold);
+}
+
+/* ==========================================================================
+   UTILIDADES
+   ========================================================================== */
+
+.kz-divider { border: none; border-top: 1px solid var(--kz-border); margin: var(--kz-space-5) 0; }
+.kz-eyebrow {
+  font-size: var(--kz-fs-xs);
+  font-weight: var(--kz-fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kz-red);
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal SGC · Laboratorio Demo</title>
+  <link rel="icon" href="img/logo-kaizenlab.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/kaizenlab-design-system.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-seccion="inicio">
+
+<header class="p-header">
+  <div class="p-header-in">
+    <a class="p-marca" href="index.html">
+      <img src="img/logo-kaizenlab.jpg" alt="KaizenLab · Consultoría en Sistemas de Gestión de Calidad y Mejora Continua">
+      <span class="p-marca-txt"><b>Laboratorio Demo</b><span>Portal SGC · ISO 15189:2022</span></span>
+    </a>
+    <nav class="p-nav" aria-label="Secciones del portal">
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="preexaminacion.html">Preexaminación</a>
+      <a href="examinacion.html">Examinación</a>
+      <a href="postexaminacion.html">Postexaminación</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="minisgc.html">miniSGC</a>
+      <a href="interconexion.html">Cómo funciona</a>
+    </nav>
+  </div>
+</header>
+<div class="demo-banda">Portal de demostración con datos ficticios · ¿Lo quieres para tu laboratorio? <a href="https://www.kaizenlabmexico.mx" target="_blank" rel="noopener">KaizenLab México</a></div>
+
+<main class="p-main">
+
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="hero-txt">
+      <span class="eyebrow">Portal interno del personal</span>
+      <h1 id="h-hero">Todo el sistema del laboratorio, en un solo lugar.</h1>
+      <p>Procedimientos vigentes, formatos y apps de registro del miniSGC, ordenados según el recorrido de la muestra. Lo que gestiona el hospital se consulta por referencia.</p>
+      <div class="hero-acc">
+        <a class="btn btn-primario" id="btn-nc" href="#apps">Reportar una no conformidad</a>
+        <a class="btn btn-secundario" href="interconexion.html">Ver cómo se conecta el sistema</a>
+      </div>
+    </div>
+    <form class="buscador" id="form-buscar" role="search">
+      <label for="buscar">Buscar un documento</label>
+      <div class="buscador-fila">
+        <input class="input" id="buscar" type="search" placeholder="Código o nombre, ej. toma de muestra" autocomplete="off">
+        <button class="btn btn-sec-solido" type="submit">Buscar</button>
+      </div>
+      <div class="resultados oculto" id="resultados" aria-live="polite"></div>
+      <span class="nota" style="font-size:12px">Busca en la lista maestra: solo aparece la versión vigente de cada documento.</span>
+      <div class="pills">
+        <a class="pill" href="#" data-busqueda="rechazo">Criterios de rechazo</a>
+        <a class="pill" href="#" data-busqueda="críticos">Valores críticos</a>
+        <a class="pill" href="#" data-busqueda="control de calidad">Control de calidad interno</a>
+        <a class="pill" href="#" data-busqueda="transporte">Transporte de muestras</a>
+      </div>
+    </form>
+  </section>
+
+  <section id="apps" aria-labelledby="h-apps" class="pila" style="gap:16px">
+    <div class="sec-cab">
+      <h2 id="h-apps">Registrar en el sistema</h2>
+      <span class="nota">Apps del miniSGC · el seguimiento lo hace Calidad con PIN</span>
+    </div>
+    <div class="grid-auto" style="--min:260px; gap:12px" id="apps-inicio"></div>
+  </section>
+
+  <section aria-labelledby="h-proc" class="pila" style="gap:16px">
+    <div class="pila" style="gap:4px">
+      <h2 id="h-proc" style="font-size:22px">El recorrido de la muestra</h2>
+      <p class="nota" style="font-size:14px">Cada fase reúne sus procedimientos, formatos y registros. Entra a la tuya.</p>
+    </div>
+    <div class="grid-auto" style="--min:320px">
+      <div class="card">
+        <span class="chip-fase">Fase 1 · §7.2</span>
+        <h3>Preexaminación</h3>
+        <p class="nota">Desde la solicitud del estudio hasta que la muestra llega al área analítica.</p>
+        <ul class="lista-fase" id="fase-preexaminacion"></ul>
+        <a class="enlace-fuerte" href="preexaminacion.html">Abrir Preexaminación →</a>
+      </div>
+      <div class="card">
+        <span class="chip-fase">Fase 2 · §7.3</span>
+        <h3>Examinación</h3>
+        <p class="nota">El análisis de la muestra y el aseguramiento de la validez de los resultados.</p>
+        <ul class="lista-fase" id="fase-examinacion"></ul>
+        <a class="enlace-fuerte" href="examinacion.html">Abrir Examinación →</a>
+      </div>
+      <div class="card">
+        <span class="chip-fase">Fase 3 · §7.4</span>
+        <h3>Postexaminación</h3>
+        <p class="nota">La revisión, liberación y entrega del informe, y el destino de la muestra.</p>
+        <ul class="lista-fase" id="fase-postexaminacion"></ul>
+        <a class="enlace-fuerte" href="postexaminacion.html">Abrir Postexaminación →</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Recursos y miniSGC" class="grid-auto" style="--min:420px">
+    <div class="card">
+      <div class="sec-cab"><h3>Recursos</h3><span class="nota" style="font-size:12px">Capítulo 6</span></div>
+      <p class="nota">Lo que hace posible el trabajo de las tres fases.</p>
+      <ul class="mosaico" id="mos-recursos"></ul>
+    </div>
+    <div class="card tinta">
+      <div class="sec-cab"><h3>miniSGC del laboratorio</h3><span class="nota" style="font-size:12px">Capítulos 4, 5 y 8</span></div>
+      <p class="nota">El sistema propio del laboratorio para controlar y mejorar su trabajo.</p>
+      <ul class="mosaico" id="mos-minisgc"></ul>
+    </div>
+  </section>
+
+  <section class="grid-auto" style="--min:340px" aria-label="Política e imparcialidad">
+    <div class="card">
+      <h2 style="font-size:18px">Política de la calidad</h2>
+      <p id="politica" style="color:var(--a-text-body)"></p>
+      <a class="enlace-fuerte" style="font-size:13px" href="minisgc.html#estructura">Ver objetivos de la calidad →</a>
+    </div>
+    <div class="card">
+      <h2 style="font-size:18px">Imparcialidad y confidencialidad</h2>
+      <p style="color:var(--a-text-body)">El personal firma su compromiso de imparcialidad y confidencialidad. Los riesgos a la imparcialidad se revisan en la matriz de riesgos.</p>
+      <a class="enlace-fuerte" style="font-size:13px" href="minisgc.html#generales">Ver declaraciones y análisis →</a>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="h-hosp">
+    <div class="sec-cab">
+      <h2 id="h-hosp" style="font-size:18px">Documentos del hospital aplicables</h2>
+      <a class="enlace-fuerte" style="font-size:13px" href="minisgc.html#estructura">Interfaz laboratorio–hospital →</a>
+    </div>
+    <p class="nota">Estos procesos los gestiona el SGC del hospital. El laboratorio los usa por referencia y no los duplica; evalúa el servicio que recibe (§6.8).</p>
+    <div class="refs" id="hospital-inicio"></div>
+  </section>
+
+</main>
+
+<footer class="p-footer">
+  <div class="p-footer-in">
+    <span>Laboratorio Demo · Portal de demostración de KaizenLab México · ISO 15189:2022</span>
+    <span>La versión vigente es la publicada en este portal. Las copias impresas no están controladas.</span>
+  </div>
+</footer>
+
+<script src="js/datos.js"></script>
+<script src="js/portal.js"></script>
+</body>
+</html>

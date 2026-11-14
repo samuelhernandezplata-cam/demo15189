@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cómo funciona el sistema · Portal SGC Demo</title>
+  <link rel="icon" href="img/logo-kaizenlab.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/kaizenlab-design-system.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-seccion="interconexion">
+
+<header class="p-header">
+  <div class="p-header-in">
+    <a class="p-marca" href="index.html">
+      <img src="img/logo-kaizenlab.jpg" alt="KaizenLab · Consultoría en Sistemas de Gestión de Calidad y Mejora Continua">
+      <span class="p-marca-txt"><b>Laboratorio Demo</b><span>Portal SGC · ISO 15189:2022</span></span>
+    </a>
+    <nav class="p-nav" aria-label="Secciones del portal">
+      <a href="index.html">Inicio</a>
+      <a href="preexaminacion.html">Preexaminación</a>
+      <a href="examinacion.html">Examinación</a>
+      <a href="postexaminacion.html">Postexaminación</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="minisgc.html">miniSGC</a>
+      <a href="interconexion.html" aria-current="page">Cómo funciona</a>
+    </nav>
+  </div>
+</header>
+<div class="demo-banda">Portal de demostración con datos ficticios · ¿Lo quieres para tu laboratorio? <a href="https://www.kaizenlabmexico.mx" target="_blank" rel="noopener">KaizenLab México</a></div>
+
+<main class="p-main compacto" style="max-width:1640px">
+  <div class="pila">
+    <nav class="migas" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Cómo funciona</span></nav>
+    <h1 style="font-size:30px">Cómo se interconectan los requisitos de ISO 15189:2022</h1>
+    <p class="intro">La muestra del paciente recorre tres fases. La dirección, los recursos y el miniSGC del laboratorio las sostienen, las controlan y las mejoran. Haz clic en un requisito para ver sus conexiones.</p>
+  </div>
+
+  <div class="ic-layout">
+    <div class="ic-lienzo" id="lienzo">
+      <div class="ic-escena" id="escena" style="height:920px"></div>
+    </div>
+    <aside class="ic-panel" id="panel" aria-live="polite"></aside>
+  </div>
+</main>
+
+<footer class="p-footer">
+  <div class="p-footer-in">
+    <span>Laboratorio Demo · Portal de demostración de KaizenLab México · ISO 15189:2022</span>
+    <span>La versión vigente es la publicada en este portal. Las copias impresas no están controladas.</span>
+  </div>
+</footer>
+
+<script src="js/interconexion.js"></script>
+</body>
+</html>

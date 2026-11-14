@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>miniSGC del laboratorio · Portal SGC Demo</title>
+  <link rel="icon" href="img/logo-kaizenlab.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/kaizenlab-design-system.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-seccion="minisgc">
+
+<header class="p-header">
+  <div class="p-header-in">
+    <a class="p-marca" href="index.html">
+      <img src="img/logo-kaizenlab.jpg" alt="KaizenLab · Consultoría en Sistemas de Gestión de Calidad y Mejora Continua">
+      <span class="p-marca-txt"><b>Laboratorio Demo</b><span>Portal SGC · ISO 15189:2022</span></span>
+    </a>
+    <nav class="p-nav" aria-label="Secciones del portal">
+      <a href="index.html">Inicio</a>
+      <a href="preexaminacion.html">Preexaminación</a>
+      <a href="examinacion.html">Examinación</a>
+      <a href="postexaminacion.html">Postexaminación</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="minisgc.html" aria-current="page">miniSGC</a>
+      <a href="interconexion.html">Cómo funciona</a>
+    </nav>
+  </div>
+</header>
+<div class="demo-banda">Portal de demostración con datos ficticios · ¿Lo quieres para tu laboratorio? <a href="https://www.kaizenlabmexico.mx" target="_blank" rel="noopener">KaizenLab México</a></div>
+
+<main class="p-main compacto">
+
+  <div class="pila">
+    <nav class="migas" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>miniSGC del laboratorio</span></nav>
+    <div class="titulo-fila">
+      <h1>miniSGC del laboratorio</h1>
+      <span class="chip-fase">Capítulos 4, 5 y 8</span>
+    </div>
+    <p class="intro">El sistema de gestión propio del laboratorio para controlar y mejorar su trabajo, en convivencia con el SGC del hospital.</p>
+  </div>
+
+  <div class="dos-col">
+    <nav class="menu-etapas" id="menu-etapas" aria-label="Etapas de miniSGC del laboratorio"></nav>
+
+    <div class="contenido">
+      <section aria-labelledby="titulo-docs" class="pila" style="gap:12px">
+        <div class="sec-cab">
+          <h2 id="titulo-docs" style="font-size:20px">Documentos vigentes</h2>
+          <span class="nota" id="nota-docs" style="font-size:12px"></span>
+        </div>
+        <div class="tabla-caja">
+          <table class="tabla">
+            <thead><tr><th scope="col">Código</th><th scope="col">Documento</th><th scope="col">Tipo</th><th scope="col">Versión</th><th scope="col">Vigente desde</th></tr></thead>
+            <tbody id="tabla-docs"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid-auto" style="--min:300px" aria-label="Formatos y apps">
+        <div class="card" style="padding:20px">
+          <h2 style="font-size:16px">Formatos y registros</h2>
+          <ul class="lista-reg" id="formatos"></ul>
+          <span class="nota" style="font-size:12px">En papel o Excel controlado: descarga siempre desde aquí la versión vigente.</span>
+        </div>
+        <div class="card" style="padding:20px">
+          <h2 style="font-size:16px">Apps de esta sección</h2>
+          <div class="pila" id="apps-seccion"></div>
+        </div>
+      </section>
+
+      <section class="card" id="caja-hospital" style="padding:20px" aria-labelledby="h-hosp">
+        <h2 id="h-hosp" style="font-size:16px">Del hospital, por referencia</h2>
+        <p class="nota">Aplican a esta sección pero los controla el SGC del hospital.</p>
+        <div class="refs" id="hospital-seccion"></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="p-footer">
+  <div class="p-footer-in">
+    <span>Laboratorio Demo · Portal de demostración de KaizenLab México · ISO 15189:2022</span>
+    <span>La versión vigente es la publicada en este portal. Las copias impresas no están controladas.</span>
+  </div>
+</footer>
+
+<script src="js/datos.js"></script>
+<script src="js/portal.js"></script>
+</body>
+</html>
